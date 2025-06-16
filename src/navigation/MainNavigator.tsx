@@ -1,6 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { colors } from '../theme/colors';
+ 
 import { RootStackParamList } from './types';
 import RoomDetailsScreen from '../screens/RoomDetailsScreen';
 import BookingScreen from '../screens/BookingScreen';
@@ -13,20 +13,10 @@ const MainNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: {
-          backgroundColor: colors.background.primary,
-        },
-        headerTintColor: colors.primary,
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
+        headerShown: false,
       }}
     >
-      <Stack.Screen
-        name="Main"
-        component={BottomNavigator}
-        options={{ headerShown: false }}
-      />
+      <Stack.Screen name="Main" component={BottomNavigator} />
       <Stack.Screen name="RoomDetails" component={RoomDetailsScreen} />
       <Stack.Screen name="Booking" component={BookingScreen} />
       <Stack.Screen name="Chat" component={ChatScreen} />
